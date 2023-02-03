@@ -1,0 +1,178 @@
+ body {
+     background-color: #D3D3D3;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+     padding-top: 20px;
+     box-sizing: border-box;
+ }
+
+ main {
+     background-color: white;
+     height: 100%;
+     width: 80%;
+     box-shadow:
+         0px 0px 1px -9px rgba(0, 0, 0, 0.132),
+         0px 0px 2.4px -9px rgba(0, 0, 0, 0.19),
+         0px 0px 4.3px -9px rgba(0, 0, 0, 0.235),
+         0px 0px 7.1px -9px rgba(0, 0, 0, 0.275),
+         0px 0px 11.6px -9px rgba(0, 0, 0, 0.32),
+         0px 0px 20.3px -9px rgba(0, 0, 0, 0.378),
+         0px 0px 44px -9px rgba(0, 0, 0, 0.51);
+     border-radius: 2px;
+     box-sizing: border-box;
+ }
+
+ .formFicha {
+     padding: 30px 20px 20px 20px;
+ }
+
+ .FichaInfoTop {
+     display: grid;
+     grid-template-columns: 1.8fr 1fr 1fr;
+     gap: 10px;
+     align-items: center;
+     justify-content: center;
+ }
+
+
+ input {
+     width: 96%;
+     margin-bottom: 2px;
+     padding: 3px;
+     font-size: 16px;
+     border-width: 2px;
+     border-style: solid;
+     border-radius: 5px;
+     border-color: #d64d4d;
+     text-shadow: 0px 0px 0px rgba(42, 42, 42, .75);
+     box-shadow: 0px 0px 5px 0px rgba(42, 42, 42, .92);
+     font-weight: bold;
+     box-sizing: border-box;
+ }
+
+ .css-input:focus {
+     outline: none;
+ }
+
+ .FichaInfoTop>div>input:first-child {
+     height: 50px;
+ }
+
+ .OriginsDiv {
+     margin-left: 10%;
+     display: grid;
+     grid-template-columns: 0.7fr 0.7fr 1fr 0.8fr;
+     margin-top: 10px;
+     gap: 7px;
+ }
+
+ .BodyInformation {
+     display: grid;
+     grid-auto-columns: 1fr;
+     grid-template-columns: 1fr 0.9fr;
+     grid-template-rows: auto 0.2fr auto 0.5fr 0.5fr;
+     gap: 1% 2%;
+     grid-template-areas:
+         ". AtributosDiv"
+         ". AtributosDiv"
+         ". AtributosDiv"
+         ". AtributosDiv"
+         ". AtributosDiv";
+     justify-content: stretch;
+     margin-top: 20px;
+ }
+
+ .AtributosDiv {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+     gap: 2%;
+     text-align: center;
+ }
+
+ .AtributosDiv input,
+ .PericiasDiv input {
+     text-align: center;
+ }
+
+ .AtributosDiv div {
+     border: 1px solid black;
+     padding: 4px;
+     border-radius: 4px;
+ }
+
+ .AtributosDiv input {
+     margin: 3px 0 15px 0;
+ }
+
+ .PericiasDiv {
+     grid-area: AtributosDiv;
+ }
+
+ .Oficio {
+     display: flex;
+     align-items: center;
+     gap: 5%;
+ }
+
+ .InputOficio {
+     width: 60%;
+ }
+.HPAndManaDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3%;
+}
+.Tipo{
+    text-align: center;
+}
+.DivContadorHPouMana{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    align-items: center;
+    text-align: center;
+    gap: 2%;
+}
+
+ .EquipamentosDiv textarea {
+     width: 100%;
+     resize: vertical;
+     min-height: 300px;
+ }
+
+ .DinheiroDiv {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+ }
+.AtaquesDiv{
+    padding: 15px 10px 25px 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.AtaquesDiv input{
+    outline: 0;
+    border-width: 0 0 2px;
+    border-radius: 0;
+    box-shadow: none;
+}
+td {padding:5px 1% 5px 1%;}
+
+
+ @media (max-width: 1000px) {
+    body{
+        padding-top: 0;
+    }
+     main {
+         width: 100%;
+     }
+
+     .formFicha {
+         padding: 2%;
+     }
+
+     th,td {
+         font-size: 14px;
+     }
+
+ }
