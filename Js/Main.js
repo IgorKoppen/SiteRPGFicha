@@ -221,16 +221,20 @@ Pericias.forEach(element => {
 function criaTabela(element) {
     const value = Object.values(element);
     const novaPericia = document.createElement('tr');
+    novaPericia.classList.add("Pericia")
     value.forEach(value => {
         const input = document.createElement('input');
         const newelement = document.createElement('td');
         const IsNumber = typeof value === 'number';
         const IsTipo = value === element.Tipo;
-        if(IsTipo){
-        newelement.classList.add("Tipo")
+        if (IsTipo) {
+            newelement.classList.add("Tipo")
+            newelement.dataset.Type = `${value}`
         }
         if (IsNumber) {
+            input.setAttribute("type", "number");
             newelement.appendChild(input);
+
         } else {
             newelement.innerHTML = value;
         }
@@ -244,4 +248,83 @@ function criaTabela(element) {
         novaPericia.appendChild(newelement)
     });
     table.appendChild(novaPericia)
+}
+
+const atributos = document.querySelectorAll(".EventInputAtributo")
+
+atributos.forEach(element => {
+    element.addEventListener("change", calculationAtributo);
+});
+
+
+function calculationAtributo(e) {
+    const targetinput = e.target;
+    const getInputparent = targetinput.parentElement;
+    const getTextChildren = getInputparent.childNodes[3].childNodes[1];
+    let valorAtributo = e.target.value;
+    let modificador = retornarModificadorCalculado(valorAtributo);
+    getTextChildren.textContent = modificador < 0 ? `${modificador}` : `+${modificador}`
+}
+function retornarModificadorCalculado(valorAtributo) {
+    let modificador = -5;
+    return modificador += Math.floor(valorAtributo / 2);
+}
+
+calculationTotalPericia();
+
+function calculationTotalPericia() {
+    let pericia = document.querySelectorAll(".Pericia");
+    pericia.forEach(newPericia => {
+        newPericia.childNodes.forEach(children => {
+            children.firstChild.addEventListener("change", Total);
+        })
+
+    });
+
+}
+function Total(e) {
+    const targetinput = e.target;
+    const getInputparent = targetinput.parentElement.parentElement;
+    const Total = getInputparent.childNodes[1].firstChild;
+    const nivel = getInputparent.childNodes[2].firstChild.value;
+    const Atribute = AddAtribute(getInputparent.childNodes[3].firstChild.textContent)
+    const Treino = getInputparent.childNodes[4].firstChild.value;
+    const Outros = getInputparent.childNodes[5].firstChild.value;
+
+    if (nivel !== "" && Treino !== "" && Outros !== "") {
+        Total.value = Some(parseInt(nivel), parseInt(Atribute), parseInt(Treino), parseInt(Outros))
+    }
+
+}
+
+
+
+function Some(nivel, AtributePoints, treino, outros) {
+    return nivel + AtributePoints + treino + outros;
+}
+
+function AddAtribute(typeAtribit) {
+    var AtributePoints;
+    switch (typeAtribit) {
+        case "For":
+            AtributePoints = document.getElementById("ForcaModificador").textContent;
+            break;
+        case "Des":
+            AtributePoints = document.getElementById("DestrezaModificador").textContent;
+            break;
+        case "Con":
+            AtributePoints = document.getElementById("ConstituicaoModificador").textContent;
+            break;
+        case "Int":
+            AtributePoints = document.getElementById("InteligenciaModificador").textContent;
+            break;
+        case "Sab":
+            AtributePoints = document.getElementById("SabedoriaModificador").textContent;
+            break;
+        case "Car":
+            AtributePoints = document.getElementById("CarismaModificador").textContent;
+            break;
+    }
+
+    return AtributePoints;
 }

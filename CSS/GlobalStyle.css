@@ -5,6 +5,7 @@
      justify-content: center;
      height: 100%;
      padding-top: 20px;
+     padding-bottom: 20px;
      box-sizing: border-box;
  }
 
@@ -71,9 +72,9 @@
  .BodyInformation {
      display: grid;
      grid-auto-columns: 1fr;
-     grid-template-columns: 1fr 0.9fr;
-     grid-template-rows: auto 0.2fr auto 0.5fr 0.5fr;
-     gap: 1% 2%;
+     grid-template-columns: 1fr 0.75fr;
+     grid-template-rows: auto 0.2fr auto auto 1fr;
+     gap: 2% 2%;
      grid-template-areas:
          ". AtributosDiv"
          ". AtributosDiv"
@@ -158,7 +159,51 @@
 }
 td {padding:5px 1% 5px 1%;}
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.MainDefense{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    justify-content: center;
+    gap: 15px;
+}
+.boxTotalDefesa{
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #d64d4d;
+    text-shadow: 0px 0px 0px rgb(42 42 42 / 75%);
+    box-shadow: 0px 0px 5px 0px rgb(42 42 42 / 92%);
+    padding: 20px 15px 20px 15px;
+}
 
+.DefesaDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    margin-bottom: 5px;
+}
+.BoxProficiencias textarea{
+    width: 100%;
+    height: 200px;
+    max-height: 300px;
+    resize: vertical;
+}
+.divHabilidades{
+display: block;
+text-align: center;
+width: 100%;
+height: 100%;
+}
+.divHabilidades textarea{
+    width: 100%;
+    height: 97%;
+    resize: none;
+}
  @media (max-width: 1000px) {
     body{
         padding-top: 0;

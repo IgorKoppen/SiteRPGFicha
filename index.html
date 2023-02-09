@@ -46,38 +46,38 @@
                 </section>
                 <section class="BodyInformation">
                     <div class="AtributosDiv">
-                        <div><label for="Força">FOR</label><input type="number" name="Força">
+                        <div class="Atributo"><label for="Força">FOR</label><input type="number" name="Força" id="forca" class="EventInputAtributo">
                             <div>
-                                <h3>0</h3>
+                                <h3 id="ForcaModificador">0</h3>
                             </div>
                         </div>
-                        <div><label for="Destreza">DES</label><input type="number" name="Destreza">
+                        <div class="Atributo"><label for="Destreza">DES</label><input type="number" name="Destreza" class="EventInputAtributo">
                             <div>
-                                <h3>0</h3>
+                                <h3 id="DestrezaModificador">0</h3>
                             </div>
                         </div>
-                        <div><label for="Constituição">CON</label><input type="number" name="Constituição">
+                        <div class="Atributo"><label for="Constituição">CON</label><input type="number" name="Constituição" class="EventInputAtributo">
                             <div>
-                                <h3>0</h3>
+                                <h3 id="ConstituicaoModificador">0</h3>
                             </div>
-                        </div>
-                        <div><label for="Inteligencia">INT</label><input type="number" name="Inteligencia">
+                        </div class="Atributo">
+                        <div><label for="Inteligencia">INT</label><input type="number" name="Inteligencia" class="EventInputAtributo">
                             <div>
-                                <h3>0</h3>
+                                <h3 id="InteligenciaModificador">0</h3>
                             </div>
-                        </div>
-                        <div><label for="Sabedoria">SAB</label><input type="number" name="Sabedoria">
+                        </div class="Atributo">
+                        <div><label for="Sabedoria">SAB</label><input type="number" name="Sabedoria" class="EventInputAtributo">
                             <div>
-                                <h3>0</h3>
+                                <h3 id="SabedoriaModificador">0</h3>
                             </div>
-                        </div>
-                        <div><label for="Carisma">CAR</label><input type="number" name="Carisma">
+                        </div class="Atributo">
+                        <div><label for="Carisma">CAR</label><input type="number" name="Carisma" class="EventInputAtributo">
                             <div>
-                                <h3>0</h3>
+                                <h3 id="CarismaModificador">0</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="HPAndManaDiv">
+                    <section class="HPAndManaDiv">
                         <div class="DivContadorHPouMana">
                             <div>
                                 <br>
@@ -103,7 +103,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </section>
                     <div class="AtaquesDiv">
                         <table>
                             <thead>
@@ -153,6 +153,67 @@
                             </tbody>
                         </table>
                     </div>
+                    <section class="MainDefense">
+                        <div>
+                            <div class="DefesaDiv">
+                                <div class="boxTotalDefesa">
+                                    <label></label>DEFESA</label>
+                                    <h3>10</h3>
+                                </div>
+                                <div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Mod. de Des</th>
+                                                <th>Bônus de armadura</th>
+                                                <th>Bônus de escudo</th>
+                                                <th>Outros</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <td><input type="text"></td>
+                                            <td><input type="text"></td>
+                                            <td><input type="text"></td>
+                                            <td><input type="text"></td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ARMADURA & ESCUDO</th>
+                                            <th>Defesa</th>
+                                            <th>Penalidade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text"></td>
+                                            <td><input type="text"></td>
+                                            <td><input type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text"></td>
+                                            <td><input type="text"></td>
+                                            <td><input type="text"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="BoxProficiencias">
+                            <label for="Proficiencias">PROFICIÊNCIAS & OUTRAS CARACTERÍSTICAS</label>
+                            <textarea name="Proficiencias"></textarea>
+                        </div>
+                    </section>
+                    <section class="divHabilidades"> 
+                        <label for="HABILIDADES">HABILIDADES & MAGIAS</label>
+                        <textarea name="" id="" cols="30" rows="10">
+
+                       </textarea>
+                    </section>
                     <aside class="PericiasDiv">
                         <div>
                             <table class="TabPericiasMain">
